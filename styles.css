@@ -1,0 +1,87 @@
+/* styles.css */
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(150, 150, 150, 0.3);
+    border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+.dark .glass-panel {
+    background: rgba(30, 31, 34, 0.7);
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+.dark .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Base transitions */
+.transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+}
+
+/* Reveal Animation */
+.section-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.section-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RTL specific utilities */
+[dir="rtl"] .origin-left {
+    transform-origin: right;
+}
+[dir="rtl"] .origin-right {
+    transform-origin: left;
+}
+[dir="rtl"] .translate-x-full {
+    transform: translateX(-100%);
+}
+[dir="rtl"] .ml-2 {
+    margin-right: 0.5rem;
+    margin-left: 0;
+}
+[dir="rtl"] .-mr-2 {
+    margin-left: -0.5rem;
+    margin-right: 0;
+}
+[dir="rtl"] .group-hover\:translate-x-1:hover {
+    transform: translateX(-0.25rem);
+}
+[dir="rtl"] .bg-gradient-to-r {
+    background-image: linear-gradient(to left, var(--tw-gradient-stops));
+}
+[dir="rtl"] .bg-gradient-to-tr {
+    background-image: linear-gradient(to top left, var(--tw-gradient-stops));
+}
+[dir="rtl"] .bg-gradient-to-br {
+    background-image: linear-gradient(to bottom left, var(--tw-gradient-stops));
+}
